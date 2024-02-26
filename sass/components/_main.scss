@@ -1,0 +1,188 @@
+/* Home Main */
+main{
+    grid-area: main;
+    font-family: $font-principal;
+    min-height: 88vh;
+
+    .espaciado{
+        margin-bottom: 30px;
+        margin-top: 15px;
+    }
+    .imgPrincipal{
+        @include imagenes(550px,100%);
+    }
+    .imagenes-pequeñas{
+        @include imagenes(280px,400px);
+    }
+    .secciones{
+        @extend %display-flex;
+        text-align: center;
+    }
+    .parrafo{
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 17px;
+    }
+    .titulo{
+        font-size: 30px;
+        color:map-get($colores , second-color);
+        font-family: $font-titulos;
+    }
+    .mi-boton {
+        background-color: map-get($colores, boton-color);
+        border-radius: 15px; /* Bordes redondos */
+        border: none; /*sin color el border*/
+        padding: 10px 20px; /* Espaciado interno del botón */
+        font-size: 25px; /* Tamaño de la fuente */
+        font-weight: bold; /* Letra ancha o negrita */
+        cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+        color: map-get($colores , first-color);
+
+        a{
+            text-decoration: none;
+            color: map-get($colores ,first-color);
+
+            &:hover {
+                text-decoration: none; /* Quitar el subrayado */
+                color: map-get($colores ,third-color);
+            }
+        }
+    }
+     /* Animacion heartbeat
+     * ----------------------------------------*/
+     @keyframes heartbeat {
+        from {
+          transform: scale(1);
+          transform-origin: center center;
+          animation-timing-function: ease-out;
+        }10% {
+          transform: scale(0.91);
+          animation-timing-function: ease-in;
+        }
+        17% {
+          transform: scale(0.98);
+          animation-timing-function: ease-out;
+        }
+        33% {
+          transform: scale(0.87);
+          animation-timing-function: ease-in;
+        }
+        45% {
+          transform: scale(1);
+          animation-timing-function: ease-out;
+        }
+      }
+      .heartbeat {
+        animation: heartbeat 2s linear 2s infinite both;
+        &:hover{
+            color: map-get($colores ,third-color);
+        }
+    }
+    .div1{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    /*cartas del index */
+    .div-cartas {
+        img{
+            &:hover{
+                @include agrandar(80%);
+            }
+        }
+    }
+    
+    /*Pagina Productos*/
+    .img-productos{
+        @include imagenes(350px,400px);
+    }
+    
+    /* Pagina contacto*/
+    .izquierda{
+        text-align: left;
+        margin:40px;
+    } 
+    .carousel-item {
+        img{
+            &:hover {
+                @include agrandar(105%);
+            }
+        }
+    }
+    /* Pagina Nosotras*/
+    .img-nosotras{
+        @include imagenes(auto,40vw);
+    }
+
+    @media only screen and (max-width: 576px) {
+        grid-area: main;
+        .imgPrincipal{
+            @include imagenes(320px,100%);
+        }
+        .secciones{
+            display: block;
+        }
+        .img-productos{
+            @include imagenes(350px,407px);
+        }
+        .izquierda{
+            margin:15px;
+        } 
+        .mi-boton{
+            font-size: 17px;
+        }
+
+        /*PAGINA NOSOTRAS*/
+        .img-nosotras{
+            width: 100%;
+        }
+        /*PAGINA PRODUCTOS*/
+        #carouselExample{
+            display:  none;
+        }
+        #carouselExampleMobile{
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        /*PAGINA CONTACTO*/
+        .parrafo{
+            padding: 15px;
+        }
+    }
+
+    /* Media query para pantalla de tablet */
+    @media only screen and (min-width: 577px) and (max-width: 992px) {
+        .parrafo{
+            padding: 0px;
+            margin: 15px;
+        }
+        .imagenes-pequeñas{
+            width: 100%;
+        }
+        #carouselExampleMobile{
+            display: none;
+        }
+    }
+
+    /* Media Query para pantallas Desktop*/
+    @media only screen and (min-width: 981px) {
+        #carouselExampleMobile{
+            display: none;
+        }
+        #espaciado-id{
+            margin-bottom: 30px;
+            margin-top: 15px;
+        }
+    }
+}
+
+.fondo{
+    background-color:map-get($colores ,fondo-color);
+}
+.img {
+    //en carrito de compras
+    height: 25px;
+    padding-right: 10px;
+}

@@ -1,0 +1,69 @@
+/* Header con bootstrap */
+header {
+    grid-area: header;
+    @extend %display-flex;
+    font-family: $font-titulos;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: map-get($colores , $key: first-color);
+    border-bottom: 1px solid map-get($colores , $key:fourth-color );
+
+    .container{
+        margin-left: 0px;
+    }
+    .contenedor-logo{
+        justify-content: flex-start;
+    }
+    .contenedor-nav{
+        display: flex;
+    }
+    nav {
+        div{
+            .navbar-brand {
+                img {
+                    height: 60px;
+                }
+            }
+            ul{
+                li{
+                    display: inline;
+                    margin-right: 20px;
+        
+                    .a-nav{
+                        text-decoration: none;
+                        color: map-get($colores ,third-color);
+                        
+                    &:first-child{
+                        .letras-anchas{
+                            text-decoration: none;
+                            font-weight: bold;
+                            color: map-get($colores , second-color);
+                        }
+                    }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Medias Query*/
+
+/* Media query para pantalla de celular*/
+@media only screen and (max-width: 576px) {
+    .navbar-brand {
+        img {
+            content: url('/imagenes/logoPequeño1.png'); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
+            height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
+        }
+    }
+}
+/* Media query para pantalla de tablet */
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .navbar-toggler {
+        display: block; /* Mostrar el botón de la hamburguesa en tamaños de pantalla de tablet */
+    } 
+}

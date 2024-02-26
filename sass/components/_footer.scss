@@ -1,0 +1,21 @@
+/* Footer */
+footer{
+    grid-area: footer;
+    background-color: map-get($colores , fondo-oscuro);
+    @extend %display-flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: $font-principal;
+
+    .imgLogo{
+        @include imagenes(70px,70px);
+    }
+    .a-nav{
+        text-decoration: none;
+        color: map-get($colores ,third-color);
+        
+        &:hover{
+            color: map-get($colores ,first-color);
+        }
+    }
+}

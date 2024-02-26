@@ -1,0 +1,277 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} /* Grid*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 70px 3fr 3fr 70px;
+  grid-template-areas: "header header header" "main main main" "main main main" "footer footer footer";
+}
+
+footer, main .secciones, header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header con bootstrap */
+header {
+  grid-area: header;
+  font-family: "Open Sans", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d3d3d3;
+}
+header .container {
+  margin-left: 0px;
+}
+header .contenedor-logo {
+  justify-content: flex-start;
+}
+header .contenedor-nav {
+  display: flex;
+}
+header nav div .navbar-brand img {
+  height: 60px;
+}
+header nav div ul li {
+  display: inline;
+  margin-right: 20px;
+}
+header nav div ul li .a-nav {
+  text-decoration: none;
+  color: black;
+}
+header nav div ul li .a-nav:first-child .letras-anchas {
+  text-decoration: none;
+  font-weight: bold;
+  color: #c08e47;
+}
+
+/* Medias Query*/
+/* Media query para pantalla de celular*/
+@media only screen and (max-width: 576px) {
+  .navbar-brand img {
+    content: url("/imagenes/logoPequeño1.png"); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
+    height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
+  }
+}
+/* Media query para pantalla de tablet */
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+  .navbar-toggler {
+    display: block; /* Mostrar el botón de la hamburguesa en tamaños de pantalla de tablet */
+  }
+}
+/* Home Main */
+main {
+  grid-area: main;
+  font-family: "Quicksand", sans-serif;
+  min-height: 88vh;
+  /* Animacion heartbeat
+  * ----------------------------------------*/
+  /*cartas del index */
+  /*Pagina Productos*/
+  /* Pagina contacto*/
+  /* Pagina Nosotras*/
+  /* Media query para pantalla de tablet */
+  /* Media Query para pantallas Desktop*/
+}
+main .espaciado {
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+main .imgPrincipal {
+  height: 550px;
+  width: 100%;
+}
+main .imagenes-pequeñas {
+  height: 280px;
+  width: 400px;
+}
+main .secciones {
+  text-align: center;
+}
+main .parrafo {
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 17px;
+}
+main .titulo {
+  font-size: 30px;
+  color: #c08e47;
+  font-family: "Open Sans", sans-serif;
+}
+main .mi-boton {
+  background-color: #d1c1c7;
+  border-radius: 15px; /* Bordes redondos */
+  border: none; /*sin color el border*/
+  padding: 10px 20px; /* Espaciado interno del botón */
+  font-size: 25px; /* Tamaño de la fuente */
+  font-weight: bold; /* Letra ancha o negrita */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  color: #ffffff;
+}
+main .mi-boton a {
+  text-decoration: none;
+  color: #ffffff;
+}
+main .mi-boton a:hover {
+  text-decoration: none; /* Quitar el subrayado */
+  color: black;
+}
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+main .heartbeat {
+  animation: heartbeat 2s linear 2s infinite both;
+}
+main .heartbeat:hover {
+  color: black;
+}
+main .div1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+main .div-cartas img:hover {
+  filter: brightness(80%);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade una sombra al pasar el ratón */
+  transition: filter 0.3s ease; /* Agrega una transición suave */
+}
+main .img-productos {
+  height: 350px;
+  width: 400px;
+}
+main .izquierda {
+  text-align: left;
+  margin: 40px;
+}
+main .carousel-item img:hover {
+  filter: brightness(105%);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade una sombra al pasar el ratón */
+  transition: filter 0.3s ease; /* Agrega una transición suave */
+}
+main .img-nosotras {
+  height: auto;
+  width: 40vw;
+}
+@media only screen and (max-width: 576px) {
+  main {
+    grid-area: main;
+    /*PAGINA NOSOTRAS*/
+    /*PAGINA PRODUCTOS*/
+    /*PAGINA CONTACTO*/
+  }
+  main .imgPrincipal {
+    height: 320px;
+    width: 100%;
+  }
+  main .secciones {
+    display: block;
+  }
+  main .img-productos {
+    height: 350px;
+    width: 407px;
+  }
+  main .izquierda {
+    margin: 15px;
+  }
+  main .mi-boton {
+    font-size: 17px;
+  }
+  main .img-nosotras {
+    width: 100%;
+  }
+  main #carouselExample {
+    display: none;
+  }
+  main #carouselExampleMobile {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  main .parrafo {
+    padding: 15px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+  main .parrafo {
+    padding: 0px;
+    margin: 15px;
+  }
+  main .imagenes-pequeñas {
+    width: 100%;
+  }
+  main #carouselExampleMobile {
+    display: none;
+  }
+}
+@media only screen and (min-width: 981px) {
+  main #carouselExampleMobile {
+    display: none;
+  }
+  main #espaciado-id {
+    margin-bottom: 30px;
+    margin-top: 15px;
+  }
+}
+
+.fondo {
+  background-color: #E4CAB5;
+}
+
+.img {
+  height: 25px;
+  padding-right: 10px;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background-color: #BA8B76;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Quicksand", sans-serif;
+}
+footer .imgLogo {
+  height: 70px;
+  width: 70px;
+}
+footer .a-nav {
+  text-decoration: none;
+  color: black;
+}
+footer .a-nav:hover {
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=style.css.map */

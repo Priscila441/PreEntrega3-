@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+} /* Grid*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 70px 3fr 3fr 70px;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "main main main"
+    "footer footer footer";
+    }
+
+//Variables (Repetitivas):
+$font-principal: 'Quicksand', sans-serif;
+$font-titulos: 'Open Sans', sans-serif;
+
+//Mapas (diccionarios):
+$colores: (
+    first-color: #ffffff, 
+    second-color:#c08e47, 
+    third-color: black, 
+    fourth-color:#d3d3d3,
+    boton-color:#d1c1c7,
+    fondo-color:#E4CAB5,
+    fondo-oscuro:#BA8B76
+);
+
+//mixins (funciones):
+@mixin imagenes($alto, $ancho){
+    height: $alto;
+    width: $ancho;
+}
+@mixin agrandar($porcentaje){
+    filter: brightness($porcentaje);
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade una sombra al pasar el ratón */
+            transition: filter 0.3s ease; /* Agrega una transición suave */
+}
+
+//extends (bloques de codigo fijo):
+%display-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//magic (mezcla de colores: 
