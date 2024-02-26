@@ -114,7 +114,7 @@ main{
     .img-nosotras{
         @include imagenes(auto,40vw);
     }
-
+    //mobile
     @media only screen and (max-width: 576px) {
         grid-area: main;
         .imgPrincipal{
@@ -124,7 +124,7 @@ main{
             display: block;
         }
         .img-productos{
-            @include imagenes(350px,407px);
+            @include imagenes(350px,100%);
         }
         .izquierda{
             margin:15px;
@@ -152,7 +152,7 @@ main{
         }
     }
 
-    /* Media query para pantalla de tablet */
+    /* tablet */
     @media only screen and (min-width: 577px) and (max-width: 992px) {
         .parrafo{
             padding: 0px;
@@ -166,7 +166,7 @@ main{
         }
     }
 
-    /* Media Query para pantallas Desktop*/
+    /*Desktop*/
     @media only screen and (min-width: 981px) {
         #carouselExampleMobile{
             display: none;

@@ -56,10 +56,14 @@ header {
 @media only screen and (max-width: 576px) {
     .navbar-brand {
         img {
-            content: url('/imagenes/logoPequeño1.png'); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
+            content: url('../../imagenes/logoPequeño1.png'); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
             height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
         }
     }
+    header{
+        padding-right: 36px;
+    }
+    
 }
 /* Media query para pantalla de tablet */
 @media only screen and (min-width: 577px) and (max-width: 992px) {

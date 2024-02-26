@@ -59,8 +59,11 @@ header nav div ul li .a-nav:first-child .letras-anchas {
 /* Media query para pantalla de celular*/
 @media only screen and (max-width: 576px) {
   .navbar-brand img {
-    content: url("/imagenes/logoPequeño1.png"); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
+    content: url("../../imagenes/logoPequeño1.png"); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
     height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
+  }
+  header {
+    padding-right: 36px;
   }
 }
 /* Media query para pantalla de tablet */
@@ -80,8 +83,8 @@ main {
   /*Pagina Productos*/
   /* Pagina contacto*/
   /* Pagina Nosotras*/
-  /* Media query para pantalla de tablet */
-  /* Media Query para pantallas Desktop*/
+  /* tablet */
+  /*Desktop*/
 }
 main .espaciado {
   margin-bottom: 30px;
@@ -200,7 +203,7 @@ main .img-nosotras {
   }
   main .img-productos {
     height: 350px;
-    width: 407px;
+    width: 100%;
   }
   main .izquierda {
     margin: 15px;
