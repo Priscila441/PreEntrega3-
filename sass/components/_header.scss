@@ -54,14 +54,15 @@ header {
 
 /* Media query para pantalla de celular*/
 @media only screen and (max-width: 576px) {
+
     .navbar-brand {
         img {
-            content: url('../../imagenes/logoPequeño1.png'); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
+            content: url('/imagenes/logoPequeño1.png'); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
             height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
         }
     }
     header{
-        padding-right: 36px;
+        padding-right: 26px;
     }
     
 }
@@ -70,4 +71,7 @@ header {
     .navbar-toggler {
         display: block; /* Mostrar el botón de la hamburguesa en tamaños de pantalla de tablet */
     } 
+    header{
+        padding-right: 6px;
+    }
 }
